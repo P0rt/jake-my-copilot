@@ -1,13 +1,23 @@
 # Simple backend for testing Code-LLama
 [![Deploy to Heroku](https://github.com/P0rt/jake-my-copilot/actions/workflows/deploy_to_heroku.yml/badge.svg)](https://github.com/P0rt/jake-my-copilot/actions/workflows/deploy_to_heroku.yml)
 
-## Deployment to Heroku
-
 ### App Details
-- **Heroku App Name**: `secret-brook-89178`
-- **Remote Repository**: [https://git.heroku.com/secret-brook-89178.git](https://git.heroku.com/secret-brook-89178.git)
-- **App Dashboard**: [https://dashboard.heroku.com/apps/secret-brook-89178](https://dashboard.heroku.com/apps/secret-brook-89178)
+- **Heroku App Name**: `jake-my-copilot`  
+- **Remote Repository**: [https://git.heroku.com/jake-my-copilot.git](https://git.heroku.com/jake-my-copilot.git)  
+- **App Dashboard**: [https://dashboard.heroku.com/apps/jake-my-copilot/](https://dashboard.heroku.com/apps/jake-my-copilot/)  
 
+### Api Details
+- **POST**: [https://jake-my-copilot-2a9c2ff6d8fb.herokuapp.com/predict](https://jake-my-copilot-2a9c2ff6d8fb.herokuapp.com/predict)  
+**Headers**  
+  Key: Content-Type  
+  Value: application/json
+Body
+  raw
+  ```json
+  {
+    "code": "some code or string for predict"
+  }
+  ```      
 ### Deployment Process
 
 The app is set to automatically deploy to Heroku upon pushing to the `main` branch of the GitHub repository.
