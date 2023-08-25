@@ -1,4 +1,5 @@
 # Simple backend for testing Code-LLama
+[![Deploy to Heroku](https://github.com/P0rt/jake-my-copilot/actions/workflows/deploy_to_heroku.yml/badge.svg)](https://github.com/P0rt/jake-my-copilot/actions/workflows/deploy_to_heroku.yml)
 
 ## Deployment to Heroku
 
