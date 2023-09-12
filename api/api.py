@@ -6,14 +6,14 @@ api = Api(app)
 
 class Predict(Resource):
     def post(self):
-        # Получение данных из запроса
-        data = request.get_json(force=True)  # Добавим force=True, чтобы попытаться разобрать данные даже если нет заголовка Content-Type
+        
+        data = request.get_json(force=True)  
         code_input = data.get("code", "")
 
-        # Здесь будет логика вызова модели CodeLlama
-        # Например:
+        # This for example CodeLlama
+        # Example:
         # output = model.predict(code_input)
-        output = f"Принято: {code_input}. Здесь будет вывод вашей модели на основе входных данных."
+        output = f"Done: {code_input}. Here your data."
 
         return jsonify({"prediction": output})
 
