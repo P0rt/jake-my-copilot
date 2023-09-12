@@ -1,26 +1,23 @@
 from flask import Flask, jsonify
 from flask_restful import Api, Resource, reqparse
 
-app = Flask(__name__)
-api = Api(app)
-
 class PredictionResource(Resource):
     """
     Resource to handle predictions.
     """
 
-    def __init__(self):
-        self.parser = reqparse.RequestParser()
-        self.parser.add_argument('code', type=str, required=True,
-                                 help='No code data provided', location='json')
+    parser = reqparse.RequestParser()
+    parser.add_argument('code', type=str, required=True,
+                        help='No code data provided', location='josn')
 
-    def post(self):
+    @classmethod
+    def post(cls):
         """
-        Accepts JSON input with a 'code' key, and returns a prediction.
+        Accepts JSON input with a 'code' key and returns a prediction.
         """
 
         try:
-            args = self.parser.parse_args()
+            args = cls.parser.parse_args()
             code_input = args['code']
 
             # Placeholder for model prediction. 
@@ -31,6 +28,9 @@ class PredictionResource(Resource):
         except Exception as e:
             return jsonify({"error": str(e)}), 400
 
+
+app = Flask(__name__)
+api = Api(app)
 api.add_resource(PredictionResource, "/predict")
 
 if __name__ == "__main__":
