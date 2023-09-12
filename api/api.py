@@ -12,7 +12,8 @@ class Predict(Resource):
     def __init__(self):
         self.reqparse = reqparse.RequestParser()
         self.reqparse.add_argument('code', type=str, required=True,
-                                   help='No code data provided', location='json')
+                               help='No code data provided', location='josn')
+
     
     def post(self):
         """
